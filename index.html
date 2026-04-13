@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Portfólio - Ayra</title>
+ <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav>
+  <a href="#sobre">Sobre</a>
+  <a href="#projetos">Projetos</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="card">
+
+    <div class="tags">
+      <div class="tag roxo">engenharia de software</div>
+      <div class="tag rosa">design</div>
+      <div class="tag verde">dança</div>
+      <div class="tag laranja">moda</div>
+    </div>
+
+    <div class="ano">2026</div>
+
+    <h1>portf<span>o</span>lio</h1>
+    <div class="nome">Ayra Rodrigues Camelo</div>
+
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <h2 class="reveal">Sobre mim</h2>
+  <div class="sobre-box reveal">
+
+    <div class="sobre-content">
+
+      <div class="sobre-texto">
+        <p>
+          Tenho 19 anos, sou apaixonada por design, estética, tecnologia e inovação. Estudo engenharia de software, e tenho conhecimento básico em design gráfico.
+          Meu hobby é dançar, e também tenho interesse por moda. Estou sempre buscando aprender coisas novas e me desafiar em projetos criativos.
+        </p>
+        
+      
+<div class="sobre-foto">
+<img src="https://media.licdn.com/dms/image/v2/D4D03AQEiPxO56vaKkQ/profile-displayphoto-scale_200_200/B4DZubLJz1G8AY-/0/1767834952169?e=1777507200&v=beta&t=beM7DXLBnW05P4tI3pYuH8DuVbVWdkKVryvjctFtExY" alt="Foto de Ayra, menina sorrindo, 
+com cabelo castanho claro, usando uma blusa preta e um colar delicado. 
+O fundo é neutro, destacando seu rosto iluminado e expressivo.">
+</div>
+</div>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section id="projetos">
+  <h2 class="reveal">Projetos</h2>
+
+  <div class="projetos-grid">
+    <a href="https://github.com/Ayrete/ferramentas_web_ux/blob/main/index.html" target="_blank">
+        <div class="projeto">Projeto 1: Ficha de personagem de RPG</div>
+    </a>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <h2 class="reveal">Fale comigo!</h2>
+
+  <div class="contato-box reveal">
+    <input type="text" placeholder="Nome">
+    <input type="email" placeholder="Email">
+    <textarea placeholder="Mensagem"></textarea>
+    <button>Enviar</button>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 - Ayra Rodrigues Camelo</p>
+  <p>Telefone: +55 47 98461-1344</p>
+  <p>Email: ayrarodriguescamelo07@gmail.com</p>
+</footer>
+
+<script>
+
+/* SCROLL REVEAL */
+function revealOnScroll() {
+  const reveals = document.querySelectorAll(".reveal");
+
+  reveals.forEach(el => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+}
+
+/* PROJETOS DELAY */
+function revealProjects() {
+  const projects = document.querySelectorAll(".projeto");
+
+  projects.forEach((el, i) => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 50) {
+      setTimeout(() => {
+        el.classList.add("active");
+      }, i * 150);
+    }
+  });
+}
+
+/* HERO ANIMAÇÃO INICIAL */
+window.addEventListener("load", () => {
+  document.querySelector(".card").classList.add("active");
+});
+
+window.addEventListener("scroll", () => {
+  revealOnScroll();
+  revealProjects();
+});
+
+</script>
+
+</body>
+</html>

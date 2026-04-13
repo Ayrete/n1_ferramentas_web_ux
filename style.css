@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffebf5;
+  font-family: 'Inter', sans-serif;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: black;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 850px;
+  padding: 70px;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(18px);
+  border-radius: 25px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+
+  transform: translateY(50px);
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.card.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* TAGS */
+.tags {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  display: flex;
+  gap: 10px;
+}
+
+.tag {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  transform: rotate(-5deg);
+  transition: 0.3s;
+}
+
+.tag:hover {
+  transform: scale(1.1) rotate(0deg);
+}
+
+.roxo { background: #b89cff; }
+.rosa { background: #ff9db2; }
+.verde { background: #b8f2c2; }
+.laranja { background: #ffc9a3; }
+
+h1 {
+  font-size: 85px;
+  letter-spacing: -3px;
+}
+
+h1 span {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+.nome {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid black;
+}
+
+.ano {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* SEÇÕES */
+section {
+  padding: 100px 12%;
+}
+
+/* SCROLL ANIMAÇÃO BASE */
+.reveal {
+  transform: translateY(60px);
+  opacity: 0;
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* SOBRE */
+.sobre-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.sobre-texto {
+  flex: 1;
+  min-width: 250px;
+}
+
+.sobre-foto {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.sobre-foto img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.sobre-box {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+/* PROJETOS */
+.projetos-grid {
+    
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  text-decoration: none;
+}
+
+.projeto {
+  padding: 25px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+
+  transform: translateY(40px);
+  opacity: 0;
+  transition: 0.6s ease;
+  
+}
+
+.projeto.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.projeto:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* CONTATO */
+.contato-box {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+input, textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 12px;
+  opacity: 0.5;
+}
